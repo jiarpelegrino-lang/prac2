@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda Click V2 - Urban Mobility Redefined</title>
+    <!-- Import Montserrat font to match the design's modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables for easy color management */
+        :root {
+            --primary-red: #da251d;
+            --bg-dark-left: #202020;
+            --bg-dark-right: #2f1d1e;
+            --text-white: #ffffff;
+            --text-gray: #b0b0b0;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            /* Subtle gradient matching the background */
+            background: linear-gradient(135deg, var(--bg-dark-left) 0%, var(--bg-dark-right) 100%);
+            color: var(--text-white);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            padding: 2.5rem 5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .logo strong {
+            font-weight: 900;
+        }
+
+        .logo-accent {
+            color: var(--primary-red);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 8px;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-white);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        /* Left Column: Typography & Buttons */
+        .hero-text {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .model-year {
+            color: var(--primary-red);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .main-title {
+            font-size: 6.5rem;
+            line-height: 0.9;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .v2-accent {
+            color: var(--primary-red);
+        }
+
+        .description {
+            color: var(--text-gray);
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Call to Action Buttons */
+        .cta-group {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .btn {
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: var(--text-white);
+            border: 2px solid var(--primary-red);
+        }
+
+        .btn-primary:hover {
+            background-color: #b91d16;
+            border-color: #b91d16;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-white);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-white);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Right Column: Image */
+        .hero-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .scooter-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 4px;
+            /* Using a box-shadow to simulate the dark backdrop box in the design */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Basic Responsiveness for smaller screens */
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 4rem;
+                margin-top: 4rem;
+            }
+
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .main-title {
+                font-size: 5rem;
+            }
+
+            .hero-image-wrapper {
+                justify-content: center;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <header class="navbar">
+            <div class="logo">
+                <strong>HONDA</strong> <span class="logo-accent">CLICK V2</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#specs">SPECS</a>
+                <a href="#gallery">GALLERY</a>
+                <a href="#colors">COLORS</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </header>
+
+        <!-- Main Hero Section -->
+        <main class="hero">
+            <div class="hero-text">
+                <p class="model-year">2025 MODEL</p>
+                <h1 class="main-title">
+                    CLICK<br>
+                    <span class="v2-accent">V2</span>
+                </h1>
+                <p class="description">Urban Mobility Redefined</p>
+                <div class="cta-group">
+                    <a href="#explore" class="btn btn-primary">Explore Now &rarr;</a>
+                    <a href="#specs" class="btn btn-secondary">View Specs</a>
+                </div>
+            </div>
+            
+            <div class="hero-image-wrapper">
+                <!-- Replace 'your-scooter-image.jpg' with the actual path to your image asset -->
+                <img src="https://via.placeholder.com/600x400/111111/ffffff?text=Scooter+Image" alt="Honda Click V2 2025" class="scooter-image">
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
