@@ -1,0 +1,57 @@
+/* --- ANIMATION STATES --- */
+
+/* Initial hidden state for elements */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* State when element becomes visible */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation for grid items */
+.feature-card, .spec-item, .gallery-grid div {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.active .feature-card, 
+.active .spec-item, 
+.active .gallery-grid div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add delays for a staggered "wave" effect */
+.active .feature-card:nth-child(2) { transition-delay: 0.2s; }
+.active .feature-card:nth-child(3) { transition-delay: 0.4s; }
+
+.active .spec-item:nth-child(2) { transition-delay: 0.1s; }
+.active .spec-item:nth-child(3) { transition-delay: 0.2s; }
+.active .spec-item:nth-child(4) { transition-delay: 0.3s; }
+
+/* Special Hero Image Float Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero-image img {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Accent Line growing animation */
+.active .accent-line {
+    animation: growLine 1s ease-forward;
+}
+
+@keyframes growLine {
+    from { width: 0; }
+    to { width: 50px; }
+}
